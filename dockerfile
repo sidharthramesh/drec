@@ -6,6 +6,7 @@ RUN apk add --update \
     make \
   && rm -rf /var/cache/apk/*
 ADD ./requirements.txt tmp/requirements.txt
-
+WORKDIR /tmp/
+RUN pip install -r requirements.txt
 WORKDIR /code/
 ENTRYPOINT [ "sh" ]
