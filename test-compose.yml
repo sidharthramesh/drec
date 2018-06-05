@@ -1,0 +1,11 @@
+version: '3'
+services:
+  server:
+    build:
+      dockerfile: dockerfile.test
+      context: .
+    
+    volumes: 
+      - .:/code
+  ipfs:
+    image: "jbenet/go-ipfs:latest"
