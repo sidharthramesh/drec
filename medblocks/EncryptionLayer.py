@@ -43,3 +43,6 @@ def decrypt_file(file_name, key):
 
 def generate_random_aes_key():
     return os.urandom(32)
+
+def generate_random_RSA():
+    return RSA.generate(1024, os.urandom)
