@@ -56,7 +56,7 @@ def load(file=credentials_path):
     except FileNotFoundError:
         echo("[-] No user logged in. Please login.")
         click.secho("Hint: Use 'createuser' to create a user json file", fg='green')
-        exit(1)
+        return None
     return user
 
 def register_on_blockchain(string):
