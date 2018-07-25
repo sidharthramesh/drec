@@ -87,7 +87,7 @@ def register_on_blockchain(string):
     # mobile => address, rsa_key
     # address => [{ ipfs hash, cipher, emergency_cipher}]
 
-current_user = load()
+
 
 
 def filter(l, key, value):
@@ -173,6 +173,7 @@ class Patient(object):
         self.non_keyed = non_keyed
         
     def has_permission(self, medblock):
+        current_user = load()
         if current_user['bigchain'].public_key in medblock['keys'].keys():
             return medblock['keys'][current_user['bigchain'].public_key]
         return False
@@ -215,6 +216,7 @@ class Patient(object):
             echo("----------------------------------------------------------------------------------")
 
     def write_medblock(self, ipfs_hash, encrypted_key, emergency_key=None, format=None):
+        current_user = load()
         data = {
         'schema':'medblocks.medblock',
         'version':'v0.01',
@@ -250,6 +252,7 @@ class Patient(object):
         self.transfer_medblock(sent)
     
     def transfer_medblock(self, tx, metadata=None):
+        current_user = load()
         echo("[+] Transfering MedBlock to patient: {}".format(self.bio['bigchain']))
         output = tx['outputs'][0]
         transfer_input = {
@@ -443,7 +446,7 @@ def permit(asset, address, phone, all):
         if doctor.bio['bigchain'] in recorded_keys:
             echo("[+] Permission already granted")
             exit()
-        
+        current_user = load()
         user_patient = Patient(public_key=current_user['bigchain'].public_key)
         if user_patient.owner_is_patient(asset):
             tx = bdb.transactions.get(asset_id=asset)[-1]
