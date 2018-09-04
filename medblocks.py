@@ -304,7 +304,7 @@ class Patient(object):
 
 def ipfs_connect():
     try:
-        api = ipfsapi.connect('127.0.0.1', 5001)
+        api = ipfsapi.connect('ipfs', 5001)
         secho("[+] Connected to local IPFS node", fg='green')
     except ipfsapi.exceptions.ConnectionError:
         secho("[-] Local IPFS daemon not running. Exiting...", fg='red')
@@ -477,6 +477,7 @@ def permit(asset, address, phone, all):
 @click.option('--output','-o',type=click.Path(), help='Output path for file')
 def get(asset, output):
     """Retrive and decrypt medblock"""
+    current_user = load()
     user_patient = Patient(public_key=current_user['bigchain'].public_key)
     keys = user_patient.get_keys(asset)
     if current_user['bigchain'].public_key in keys.keys():
