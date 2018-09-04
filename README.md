@@ -5,40 +5,24 @@ With Medblocks you can store your medical records (and other documents actually)
 ## Installation
 MedBlocks works perfectly on Linux. It should work on windows, but I haven't tested it because some of the dependencies required build tools for windows (which was a pain to install)
 
-Install build tools first:
-```
-sudo apt install build-essential
-sudo apt install python-dev
-```
-Clone the repository
+1. Install Docker and docker-compose
+2. Clone the repository
 ```
 git clone https://github.com/sidharthramesh/medblocks.git
 cd medblocks
 
 ```
-Install as command line tool
+3. Build docker image
 ```
-pip install -e .
+docker-compose build .
 ```
-Check installation
+4. Run image
 ```
-medblocks --version
+docker-compose run server
 ```
-
-If you have any trouble while importing rapid-json, try running it as a normal script instead:
-
+5. Test version
 ```
-pip install -r requirements.txt
-```
-Check if installed
-```
-python medblocks.py --verion
-```
-
-## Usage
-To bring up the documentation
-```
-medblocks --help
+# python medblocks.py --version
 ```
 
 The working of medblocks is explained in detail in this [article]().
