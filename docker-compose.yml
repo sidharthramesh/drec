@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ipfs:
+    image: "jbenet/go-ipfs:latest"
+  server:
+    build: .
+    volumes: 
+      - .:/code
+    depends_on: 
+      - ipfs

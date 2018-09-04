@@ -3,14 +3,14 @@ aniso8601==3.0.0
 asn1crypto==0.24.0
 async-timeout==3.0.0
 base58==0.2.5
-BigchainDB==1.0.1
-bigchaindb-driver==0.4.1
+BigchainDB==2.0.0a1
+bigchaindb-driver==0.5.0a1
 certifi==2018.4.16
 cffi==1.11.5
 chardet==3.0.4
 click==6.7
 cryptoconditions==0.6.0.dev1
-cryptography==1.9
+cryptography==2.3
 Flask==1.0.2
 Flask-Cors==3.0.4
 Flask-RESTful==0.3.6
