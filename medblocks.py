@@ -316,7 +316,7 @@ def give_permission(address, medblock_index):
 
 @main.command()
 @click.option('--output','-o', help="Output file with credentials", default='user.json')
-@click.option('--name','-n',prompt="Name of patient")
+@click.option('--name','-n',prompt="Name")
 @click.option('--phone','-p',prompt="Phone number")
 def createuser(name, phone, output):
     """Generate a user file data"""
@@ -397,7 +397,7 @@ def list(address, phone):
     publicpatient.display_medblocks()
 
 @main.command()
-@click.option('--phone','-t', help="Mobile number of the patient")
+@click.option('--phone','-p', help="Mobile number of the patient")
 @click.option('--address','-a', help="Public key of the patient")
 @click.option('--emergency','-e', help="IS EMERGENCY DATA", is_flag=True)
 @click.argument('file',type=click.Path(exists=True))
