@@ -29,4 +29,4 @@ The working of medblocks is explained in detail in this [article]().
 
 Also check out this video demonstration for more clarity:
 
-[Video Demonstration](https://www.youtube.com/watch?v=0PrUr3bQdwM)
+[Video Demonstration](https://www.youtube.com/watch?v=5R-0eyWU99I)
