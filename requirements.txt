@@ -42,5 +42,5 @@ shellescape==3.4.1
 six==1.11.0
 statsd==3.2.1
 urllib3==1.22
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 yarl==1.2.4
